@@ -1,0 +1,855 @@
+/********** Template CSS **********/
+
+:root {
+    --primary: #13C5DD;
+    --secondary: #354F8E;
+    --light: #EFF5F9;
+    --dark: #1D2A4D;
+}
+
+.btn {
+    font-weight: 700;
+    transition: .5s;
+}
+
+.btn:hover {
+    -webkit-box-shadow: 0 8px 6px -6px #555555;
+    -moz-box-shadow: 0 8px 6px -6px #555555;
+    box-shadow: 0 8px 6px -6px #555555;
+}
+
+.btn-primary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 36px;
+    height: 36px;
+}
+
+.btn-sm-square {
+    width: 28px;
+    height: 28px;
+}
+
+.btn-lg-square {
+    width: 46px;
+    height: 46px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+    z-index: 99;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Jost', sans-serif;
+    position: relative;
+    margin-left: 30px;
+    padding: 30px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+    outline: none;
+    transition: .5s;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+@media (min-width: 992px) {
+    .navbar-light .navbar-nav .nav-link::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 5px;
+        bottom: 0;
+        left: 50%;
+        background: var(--primary);
+        transition: .5s;
+    }
+    .navbar-light .navbar-nav .nav-link:hover::before,
+    .navbar-light .navbar-nav .nav-link.active::before {
+        width: 100%;
+        left: 0;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+
+.hero-header {
+    background: url(../img/azizi.png) top right no-repeat;
+    background-size: cover;
+    height: 720px;
+    /* Tinggi kontainer sesuaikan dengan tinggi gambar */
+}
+
+.service-item {
+    position: relative;
+    height: 350px;
+    padding: 0 30px;
+    transition: .5s;
+}
+
+.service-item .service-icon {
+    width: 150px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    border-radius: 50%;
+    transform: rotate(-14deg);
+}
+
+.service-item .service-icon i {
+    transform: rotate(15deg);
+}
+
+.service-item a.btn {
+    position: absolute;
+    width: 60px;
+    bottom: -48px;
+    left: 50%;
+    margin-left: -30px;
+    opacity: 0;
+}
+
+.service-item:hover a.btn {
+    bottom: -24px;
+    opacity: 1;
+}
+
+.price-carousel::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    background: var(--primary);
+    border-radius: 8px 8px 50% 50%;
+    z-index: -1;
+}
+
+.price-carousel .owl-nav {
+    margin-top: 35px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.price-carousel .owl-nav .owl-prev,
+.price-carousel .owl-nav .owl-next {
+    position: relative;
+    margin: 0 5px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    background: #FFFFFF;
+    font-size: 22px;
+    border-radius: 45px;
+    transition: .5s;
+}
+
+.price-carousel .owl-nav .owl-prev:hover,
+.price-carousel .owl-nav .owl-next:hover {
+    color: var(--dark);
+}
+
+@media (min-width: 576px) {
+    .team-item .row {
+        height: 350px;
+    }
+}
+
+.team-carousel .owl-nav {
+    position: absolute;
+    padding: 0 45px;
+    width: 100%;
+    height: 45px;
+    top: calc(50% - 22.5px);
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-carousel .owl-nav .owl-prev,
+.team-carousel .owl-nav .owl-next {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: var(--primary);
+    border-radius: 45px;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.team-carousel .owl-nav .owl-prev:hover,
+.team-carousel .owl-nav .owl-next:hover {
+    background: var(--dark);
+}
+
+.testimonial-carousel .owl-dots {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
+    background: var(--light);
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+}
+
+.testimonial-carousel .owl-item img {
+    width: 150px;
+    height: 150px;
+}
+
+.img-fluid.rounded-top {
+    width: 60%;
+    /* Atur lebar gambar menjadi 100% */
+    height: 20;
+    /* Atur tinggi gambar agar mengikuti proporsi aslinya */
+    display: 40;
+    /* Atur tampilan gambar menjadi block */
+}
+
+
+/* Custom CSS for Navbar Image */
+
+.clinic-icon {
+    /* Menyamakan lebar dan tinggi untuk mempertahankan proporsi gambar */
+    width: 250px;
+    height: 250px;
+    /* Ubah sesuai kebutuhan Anda */
+    /* Menyusun gambar di sebelah kiri teks */
+    margin-right: 0px;
+    /* Ubah sesuai kebutuhan Anda */
+}
+
+
+/* Custom CSS for Navbar */
+
+.navbar {
+    /* Tambahkan padding atas dan bawah untuk mempertahankan jarak */
+    padding-top: 20px;
+    /* Ubah sesuai kebutuhan Anda */
+    padding-bottom: 10px;
+    /* Ubah sesuai kebutuhan Anda */
+}
+
+@import url('https://fonts.googleapis.com/css?family=Yantramanav:100,300');
+
+/* ------------- */
+
+
+/* GLOBAL STYLES */
+
+
+/* ------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    font-family: 'Yantramanav', sans-serif;
+    padding: 1em;
+}
+
+.container {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.brand {
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.brand span {
+    color: #000000;
+}
+
+.wrapper {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.7);
+}
+
+.wrapper>* {
+    padding: 1em;
+}
+
+
+/* ------------------- */
+
+
+/* COMPANY INFORMATION */
+
+
+/* ------------------- */
+
+.company-info {
+    background: #C3C9DD;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.company-info h3,
+.company-info ul {
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+
+/* ------- */
+
+
+/* CONTACT */
+
+
+/* ------- */
+
+.contact {
+    background: #dcdfea;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+
+/* ---- */
+
+
+/* FORM */
+
+
+/* ---- */
+
+.contact form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.contact form label {
+    display: block;
+}
+
+.contact form p {
+    margin: 0;
+}
+
+.contact form .full {
+    grid-column: 1 / 3;
+}
+
+.contact form button,
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    padding: 1em;
+    border: solid 1px #627EDC;
+    border-radius: 4px;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.contact form button {
+    background: #627EDC;
+    border: 0;
+    color: #e4e4e4;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.contact form button:hover,
+.contact form button:focus {
+    background: #3952a3;
+    color: #ffffff;
+    outline: 0;
+    transition: background-color 2s ease-out;
+}
+
+
+/* ------------- */
+
+
+/* MEDIA QUERIES */
+
+
+/* ------------- */
+
+@media only screen and (min-width: 700px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+    .wrapper>* {
+        padding: 2em;
+    }
+    .company-info {
+        border-radius: 4px 0 0 4px;
+    }
+    .contact {
+        border-radius: 0 4px 4px 0;
+    }
+    .company-info h3,
+    .company-info ul,
+    .brand {
+        text-align: left;
+    }
+}
+
+.logo {
+    width: 150px;
+    /* Sesuaikan lebar gambar sesuai kebutuhan */
+    vertical-align: middle;
+    /* Mengatur posisi vertikal agar sejajar dengan teks */
+    margin-right: 10px;
+    /* Memberikan jarak antara gambar dan teks */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* start: Globals */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--gray-900);
+    background-color: var(--gray-50);
+}
+
+.container {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+
+/* end: Globals */
+
+
+/* start: Payment */
+
+.payment-section {
+    padding: 48px 0;
+}
+
+.payment-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.payment-header {
+    padding: 24px;
+    background-color: var(--indigo-500);
+    border-radius: 12px;
+    padding-bottom: 72px;
+}
+
+.payment-header-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--indigo-600);
+    color: var(--white);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.payment-header-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.payment-header-description {
+    font-size: 15px;
+    color: var(--gray-200);
+    line-height: 1.5;
+}
+
+.payment-content {
+    padding: 24px;
+    margin-top: -64px;
+    position: relative;
+}
+
+.payment-content::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    height: 16px;
+    border-radius: 4px;
+    background-color: var(--indigo-600);
+}
+
+.payment-body {
+    background-color: var(--white);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .05), inset 0 8px 0 rgba(0, 0, 0, .05);
+    position: relative;
+    padding-top: 8px;
+    overflow: hidden;
+}
+
+.payment-plan {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+}
+
+.payment-plan-type {
+    width: 40px;
+    height: 40px;
+    background-color: var(--indigo-500);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.payment-plan-info {
+    width: 100%;
+    margin-right: 8px;
+    display: grid;
+}
+
+.payment-plan-info-name {
+    font-size: 13px;
+    color: var(--gray-400);
+    margin-bottom: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.payment-plan-info-price {
+    font-weight: 600;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.payment-plan-change {
+    color: var(--blue-500);
+    font-size: 12px;
+    font-weight: 600;
+    text-underline-offset: 2px;
+}
+
+.payment-plan-change:hover {
+    color: var(--blue-600);
+}
+
+.payment-summary-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 12px;
+}
+
+.payment-summary-name {
+    font-size: 14px;
+    color: var(--gray-500);
+}
+
+.payment-summary-price {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.payment-summary-divider {
+    width: calc(100% - 16px);
+    height: 0;
+    margin: 12px auto;
+    border-bottom: 1px dashed var(--gray-200);
+    position: relative;
+}
+
+.payment-summary-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 100%;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--gray-50);
+    box-shadow: inset 0 2px 16px rgba(0, 0, 0, .05);
+}
+
+.payment-summary-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100%;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--gray-50);
+    box-shadow: inset 0 2px 16px rgba(0, 0, 0, .05);
+}
+
+.payment-summary-total {
+    padding-bottom: 16px;
+}
+
+.payment-summary-total .payment-summary-name {
+    color: var(--gray-900);
+}
+
+.payment-summary-total .payment-summary-price {
+    font-size: 16px;
+    color: var(--indigo-500);
+    font-weight: 600;
+}
+
+.payment-right {
+    min-width: 0;
+}
+
+.payment-form {
+    padding: 24px;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .05);
+}
+
+.payment-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    padding: 6px 0;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.payment-method input {
+    display: none;
+}
+
+.payment-method-item {
+    width: 80px;
+    height: 80px;
+    padding: 8px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    margin-right: 12px;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+input:checked+.payment-method-item {
+    border-color: var(--indigo-500);
+}
+
+input:checked+.payment-method-item::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--indigo-500);
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEwLjAwMDcgMTUuMTcwOUwxOS4xOTMxIDUuOTc4NTJMMjAuNjA3MyA3LjM5MjczTDEwLjAwMDcgMTcuOTk5M0wzLjYzNjcyIDExLjYzNTRMNS4wNTA5MyAxMC4yMjEyTDEwLjAwMDcgMTUuMTcwOVoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMSkiPjwvcGF0aD48L3N2Zz4=");
+    background-size: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.payment-method-item>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.payment-form-group {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.payment-form-control {
+    outline: transparent;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 24px 16px 8px 16px;
+    width: 100%;
+    transition: all .15s ease-in-out;
+}
+
+.payment-form-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    color: var(--gray-400);
+    pointer-events: none;
+    transition: all .1s ease-in-out;
+}
+
+.payment-form-control:focus {
+    outline: 1px solid var(--indigo-500);
+    border-color: var(--indigo-500);
+}
+
+.payment-form-control:focus+.payment-form-label,
+.payment-form-control:not(:placeholder-shown)+.payment-form-label {
+    top: 30%;
+    font-size: 12px;
+}
+
+.payment-form-label-required::after {
+    content: ' *';
+    color: var(--red-500);
+}
+
+.payment-form-group-flex {
+    display: flex;
+    align-items: center;
+}
+
+.payment-form-group-flex>* {
+    width: 100%;
+}
+
+.payment-form-group-flex> :not(:last-child) {
+    margin-right: 12px;
+}
+
+.payment-form-submit-button {
+    background-color: var(--indigo-500);
+    border-radius: 8px;
+    outline: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+    font-weight: 600;
+    padding: 16px;
+    transition: all .15s ease-in-out;
+}
+
+.payment-form-submit-button:hover {
+    background-color: var(--indigo-600);
+}
+
+.payment-form-submit-button>i {
+    margin-right: 8px;
+}
+
+
+/* end: Payment */
+
+
+/* start: Breakpoints */
+
+@media screen and (max-width: 767px) {
+    .payment-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .payment-content {
+        padding: 16px;
+    }
+    .payment-content::before {
+        top: 16px;
+        width: calc(100% - 20px);
+    }
+    .payment-form-group-flex {
+        display: block;
+    }
+}
+
+
+/* end: Breakpoints */
